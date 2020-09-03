@@ -12,7 +12,7 @@ public class BookTest {
 
   @BeforeEach
   public void setup() {
-    BOOK = new Book("Titel", "Author", "2", "1", 1234);
+    BOOK = new Book("Titel", "Author", "2", "1", "Testdescription 1", 1234);
   }
 
   @Test
@@ -23,6 +23,7 @@ public class BookTest {
             BOOK.getAuthor(),
             BOOK.getEdition(),
             BOOK.getIsbn(),
+            BOOK.getDescription(),
             BOOK.getYearOfPublication());
     anotherCopy.setAuthor("Bene");
     assertThat(BOOK.isSameCopy(anotherCopy), is(false));
@@ -36,6 +37,7 @@ public class BookTest {
             BOOK.getAuthor(),
             BOOK.getEdition(),
             BOOK.getIsbn(),
+            BOOK.getDescription(),
             BOOK.getYearOfPublication());
     anotherCopy.setTitle("Lord of the Rings");
     assertThat(BOOK.isSameCopy(anotherCopy), is(false));
@@ -49,6 +51,7 @@ public class BookTest {
             BOOK.getAuthor(),
             BOOK.getEdition(),
             BOOK.getIsbn(),
+            BOOK.getDescription(),
             BOOK.getYearOfPublication());
     anotherCopy.setEdition("2000");
     anotherCopy.setIsbn("123456789X");

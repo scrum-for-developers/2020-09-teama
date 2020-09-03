@@ -16,7 +16,7 @@ Feature: Adding a new book to the library
       | 0552131075 | Terry Pratchett | Sourcery | Test Description 1 | 1       | 1989 | Jerry Pratchett | Sourcery | 1      |
       | 0552131075 | Terry Pratchett | Sourcery | Test Description 2 | 1       | 1989 |                 |          | 1      |
       | 0552131075 | Terry Pratchett | Sourcery | Test Description 3 | 1       | 1989 | Terry Pratchett | Sourcery | 2      |
-      | 0552131075 | Terry Pratchett | Sourcery | Test Description 4 | 1       | 1989 | Terry Pratchett | Mastery  | 1      |
+      | 0552131075 | Terry Pratchett | Sourcery |                    | 1       | 1989 | Terry Pratchett | Mastery  | 1      |
 
 
 
