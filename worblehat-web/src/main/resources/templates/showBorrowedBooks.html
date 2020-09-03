@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Show borrowed books - Worblehat Bookmanager</title>
+</head>
+<body>
+	<h1>Borrow Book</h1>
+
+	<form th:object="${showBorrowedBooksFormData}" method="POST">
+		Email:<input id="email" type="text" th:field="*{email}" />
+		<span id="email.error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+		<br />
+		<input type="submit" id="showBorrowedBooks" value="Show borrowed books" />
+		<hr />
+		<a th:href="@{/}">Back to Home</a>
+	</form>
+
+
+</body>
+</html>
