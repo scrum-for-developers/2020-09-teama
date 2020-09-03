@@ -32,24 +32,26 @@ public class ShowBorrowedBooksController {
 
   @RequestMapping(method = RequestMethod.GET)
   public void setupForm(final ModelMap model) {
-    model.put("borrowFormData", new BookBorrowFormData());
+    model.put("showBorrowedBooksFormData", new ShowBorrowedBooksFormData());
   }
 
   @Transactional
   @RequestMapping(method = RequestMethod.POST)
   public String processSubmit(
-      @ModelAttribute("borrowFormData") @Valid BookBorrowFormData borrowFormData,
+      @ModelAttribute("showBorrowedBooks") @Valid ShowBorrowedBooksFormData showBorrowedBooksFormData,
       BindingResult result) {
     if (result.hasErrors()) {
-      return "borrow";
+      return "showBorrowedBooks";
     }
-    Set<Book> books = bookService.findBooksByIsbn(borrowFormData.getIsbn());
+    Set<Book> books = bookService.findBooksByEmail(showBorrowedBooksFormData.getEmail());
     if (books.isEmpty()) {
-      result.rejectValue("isbn", "noBookExists");
-      return "borrow";
+      result.rejectValue("email", "noBorrowsExists");
+      return "showBorrowedBooks";
     }
-    Optional<Borrowing> borrowing =
-        bookService.borrowBook(borrowFormData.getIsbn(), borrowFormData.getEmail());
+    List<Book> books = bookService.findAllBooks();
+
+    //Optional<Borrowing> borrowing =
+      //  bookService.borrowBook(borrowFormData.getIsbn(), borrowFormData.getEmail());
 
     return borrowing
         .map(b -> "home")
