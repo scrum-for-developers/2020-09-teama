@@ -13,3 +13,4 @@ logs
 .DS_Store
 .mvn/wrapper/maven-wrapper.jar
 .vscode/settings.json
+.vscode/
