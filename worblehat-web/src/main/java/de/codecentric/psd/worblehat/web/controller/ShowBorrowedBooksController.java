@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /** Controller for BorrowingBook */
-@RequestMapping("/borrow")
+@RequestMapping("/showBorrowedBooks")
 @Controller
-public class BorrowBookController {
+public class ShowBorrowedBooksController {
 
   private BookService bookService;
 
   @Autowired
-  public BorrowBookController(BookService bookService) {
+  public ShowBorrowedBooksController(BookService bookService) {
     this.bookService = bookService;
   }
 
