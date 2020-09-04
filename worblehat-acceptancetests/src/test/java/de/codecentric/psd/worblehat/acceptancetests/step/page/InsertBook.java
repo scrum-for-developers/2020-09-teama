@@ -39,6 +39,15 @@ public class InsertBook {
     context.putObject("LAST_INSERTED_BOOK", isbn);
   }
 
+  @When("a librarian adds a book with {string}, {string}, {int}, {string} and {string}")
+  public void whenABookWithISBNisbnIsAdded(
+      String title, String author, int edition, String year, String isbn) {
+    seleniumAdapter.gotoPage(Page.INSERTBOOKS);
+    fillInsertBookForm(title, author, edition, isbn, year, "");
+    seleniumAdapter.clickOnPageElement(PageElement.ADDBOOKBUTTON);
+    context.putObject("LAST_INSERTED_BOOK", isbn);
+  }
+
   // *****************
   // *** T H E N *****
   // *****************
