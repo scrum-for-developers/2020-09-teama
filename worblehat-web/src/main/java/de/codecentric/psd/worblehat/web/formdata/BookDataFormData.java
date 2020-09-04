@@ -27,6 +27,8 @@ public class BookDataFormData {
   @NotEmpty(message = "{empty.bookDataFormData.author}")
   private String author;
 
+  private String description;
+
   public String getYearOfPublication() {
     return yearOfPublication;
   }
@@ -49,6 +51,14 @@ public class BookDataFormData {
 
   public void setAuthor(String author) {
     this.author = author;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public String getTitle() {
@@ -77,6 +87,8 @@ public class BookDataFormData {
         + yearOfPublication
         + ", isbn="
         + isbn
+        + ", description="
+        + description
         + ", author="
         + author
         + "]";

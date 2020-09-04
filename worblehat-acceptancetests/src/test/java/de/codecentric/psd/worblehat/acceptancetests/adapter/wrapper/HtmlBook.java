@@ -7,6 +7,7 @@ public class HtmlBook {
   private Integer edition;
   private String isbn;
   private String yearOfPublication;
+  private String description;
   private String borrower;
 
   public HtmlBook() {
@@ -20,12 +21,14 @@ public class HtmlBook {
       String yearOfPublication,
       Integer edition,
       String isbn,
+      String description,
       String borrower) {
     this.title = title;
     this.author = author;
     this.edition = edition;
     this.isbn = isbn;
     this.yearOfPublication = yearOfPublication;
+    this.description = description;
     this.borrower = borrower;
   }
 
@@ -59,6 +62,14 @@ public class HtmlBook {
 
   public void setIsbn(String isbn) {
     this.isbn = isbn;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public String getYearOfPublication() {

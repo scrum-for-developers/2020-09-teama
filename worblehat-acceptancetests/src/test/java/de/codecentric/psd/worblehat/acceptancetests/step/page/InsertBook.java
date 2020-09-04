@@ -30,11 +30,20 @@ public class InsertBook {
   // *** W H E N *****
   // *****************
 
+  @When("a librarian adds a book with {string}, {string}, {int}, {string}, {string} and {string}")
+  public void whenABookWithISBNisbnIsAdded(
+      String title, String author, int edition, String year, String description, String isbn) {
+    seleniumAdapter.gotoPage(Page.INSERTBOOKS);
+    fillInsertBookForm(title, author, edition, isbn, year, description);
+    seleniumAdapter.clickOnPageElement(PageElement.ADDBOOKBUTTON);
+    context.putObject("LAST_INSERTED_BOOK", isbn);
+  }
+
   @When("a librarian adds a book with {string}, {string}, {int}, {string} and {string}")
   public void whenABookWithISBNisbnIsAdded(
       String title, String author, int edition, String year, String isbn) {
     seleniumAdapter.gotoPage(Page.INSERTBOOKS);
-    fillInsertBookForm(title, author, edition, isbn, year);
+    fillInsertBookForm(title, author, edition, isbn, year, "");
     seleniumAdapter.clickOnPageElement(PageElement.ADDBOOKBUTTON);
     context.putObject("LAST_INSERTED_BOOK", isbn);
   }
@@ -52,11 +61,12 @@ public class InsertBook {
   // *****************
 
   private void fillInsertBookForm(
-      String title, String author, Integer edition, String isbn, String year) {
+      String title, String author, Integer edition, String isbn, String year, String description) {
     seleniumAdapter.typeIntoField("title", title);
     seleniumAdapter.typeIntoField("edition", edition.toString());
     seleniumAdapter.typeIntoField("isbn", isbn);
     seleniumAdapter.typeIntoField("author", author);
     seleniumAdapter.typeIntoField("yearOfPublication", year);
+    seleniumAdapter.typeIntoField("description", description);
   }
 }

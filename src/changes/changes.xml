@@ -31,5 +31,12 @@
 				Improved error messages for adding a book.
 			</action>
 		</release>
+
+		<release version="1.3.0" date="2020-09-04"
+			description="Release with much improved functionality">
+			<action dev="betaworblers" type="update">
+				Added description for books.
+			</action>
+		</release>
 	</body>
 </document>
