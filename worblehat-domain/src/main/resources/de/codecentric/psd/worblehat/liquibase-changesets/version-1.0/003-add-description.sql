@@ -2,4 +2,4 @@
 
 
 -- changeset action:add description
-ALTER TABLE book ADD COLUMN description varchar(255);
+ALTER TABLE book ADD COLUMN description text;

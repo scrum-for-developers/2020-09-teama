@@ -20,7 +20,10 @@ public class Book implements Serializable {
 
   // TODO: convert String to an ISBN class, that ensures a valid ISBN
   private String isbn;
+
+  @Column(columnDefinition = "TEXT")
   private String description;
+
   private int yearOfPublication;
 
   @OneToOne(mappedBy = "borrowedBook", orphanRemoval = true)
